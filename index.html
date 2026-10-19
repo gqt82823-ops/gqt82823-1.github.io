@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>각성 포스터 프롬프트 메이커</title>
+<style>
+:root{color-scheme:dark;--bg:#090611;--panel:#171025;--line:#39245b;--purple:#b65cff;--pink:#ff55e8;--text:#f7f0ff;--muted:#b8a9cb}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#281044 0,#090611 52%);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif}
+main{max-width:1050px;margin:auto;padding:24px 16px 48px}.hero{text-align:center;padding:24px 0 20px}.hero h1{font-size:clamp(27px,5vw,44px);margin:0 0 8px;text-shadow:0 0 24px #b65cff}.hero p{color:var(--muted);margin:0}
+.layout{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{background:#151020eF;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 12px 40px #0005}.panel h2{font-size:18px;margin:0 0 16px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-size:13px;color:#d8c8eb}select,input,textarea{width:100%;border:1px solid #4a326b;background:#0c0914;color:var(--text);border-radius:10px;padding:11px;font:inherit;min-width:0}input[type=file]{padding:8px}textarea{min-height:265px;resize:vertical;line-height:1.55}.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}button{border:0;border-radius:11px;padding:12px 15px;background:linear-gradient(110deg,#852cff,#d946ef);color:white;font-weight:750;font-size:14px;cursor:pointer}button.secondary{background:#2a2038;border:1px solid #57406f}button:active{transform:scale(.98)}.preview{display:block;width:100%;max-height:340px;object-fit:contain;border:1px dashed #60467c;border-radius:12px;background:#0b0810;margin-top:10px}.hint{font-size:12px;color:var(--muted);line-height:1.55;margin-top:10px}.status{min-height:20px;color:#d9b4ff;font-size:13px;margin-top:8px}.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:18px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.fields{grid-template-columns:1fr 1fr}.panel{padding:14px}}@media(max-width:390px){.fields{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<header class="hero"><h1>⚡ 각성 포스터 메이커 ⚡</h1><p>속성 · 색상 · 눈 이펙트 · 문구를 고르고 영어 이미지 프롬프트 만들기</p><noscript><p style="color:#ff9b9b;background:#321525;padding:12px;border-radius:10px">이 페이지에서 스크립트가 차단되어 있어요. 파일을 다운로드한 뒤 Chrome에서 직접 열어 주세요.</p></noscript></header>
+<div class="layout">
+<section class="panel">
+<h2>🎨 1. 내 스타일 설정</h2>
+<div class="fields">
+<div class="field"><label for="element">속성 / 능력</label><select id="element"><option value="Purple lightning">보라색 번개</option><option value="Darkness">어둠</option><option value="Fire">불꽃</option><option value="Ice">얼음</option><option value="Light">빛</option><option value="Poison">독</option><option value="Blood magic">혈마법</option><option value="Cosmic energy">우주 에너지</option><option value="Time manipulation">시간 조작</option><option value="Gravity">중력</option><option value="Electricity">전기</option><option value="Lava">용암</option><option value="Shadow flames">그림자 불꽃</option><option value="Dragon energy">용의 기운</option></select></div>
+<div class="field"><label for="color">메인 색상</label><select id="color"><option value="Neon purple">네온 보라</option><option value="Crimson red">진홍색</option><option value="Electric blue">전기 파랑</option><option value="Pitch black">칠흑</option><option value="Glowing gold">빛나는 금색</option><option value="Emerald green">에메랄드 초록</option><option value="Ice cyan">얼음 청록</option><option value="Hot pink">핫핑크</option><option value="Pure white">순백색</option><option value="Rainbow neon">무지개 네온</option></select></div>
+<div class="field"><label for="eyes">눈 이펙트</label><select id="eyes"><option value="glowing white eyes firing laser beams">하얗게 빛나는 눈에서 레이저 발사</option><option value="glowing violet eyes">보라색으로 빛나는 눈</option><option value="crimson demonic eyes">진홍색 악마의 눈</option><option value="galaxies inside the eyes">눈 속에 은하수가 펼쳐짐</option><option value="lightning flowing through the eyes">눈에 번개가 흐름</option><option value="flames bursting from the eyes">눈에서 불꽃이 솟구침</option><option value="dark smoke swirling around the eyes">눈 주변에 검은 연기가 소용돌이침</option><option value="glowing rune symbols in the eyes">눈에 빛나는 룬 문자</option></select></div>
+<div class="field"><label for="aura">오라 스타일</label><select id="aura"><option value="dark cosmic energy storm">어둠의 우주 에너지 폭풍</option><option value="explosive lightning aura">폭발하는 번개 오라</option><option value="demonic aura">악마의 오라</option><option value="divine angelic radiance">신성한 천사의 광휘</option><option value="distorted space and a cosmic vortex">왜곡된 공간과 우주 소용돌이</option><option value="roaring flames">맹렬히 타오르는 불꽃</option><option value="toxic mist and smoke">독안개와 연기</option><option value="ancient dragon energy">고대 용의 기운</option></select></div>
+<div class="field"><label for="intensity">이펙트 강도</label><select id="intensity"><option value="extreme, covering almost the entire frame">극한: 화면 거의 전체를 뒤덮음</option><option value="subtle and elegant">은은하고 우아하게</option><option value="moderate and cinematic">중간 강도, 영화처럼</option><option value="very intense and explosive">매우 강렬하고 폭발적으로</option><option value="absurdly over-the-top, maximum intensity">말도 안 되게 과장, 강도 최대로</option></select></div>
+<div class="field"><label for="expression">표정</label><select id="expression"><option value="confident evil smile">자신만만하고 사악한 미소</option><option value="emotionless final boss stare">감정 없는 최종보스의 눈빛</option><option value="furious awakened expression">분노한 각성 표정</option><option value="maniacal grin">광기 어린 웃음</option><option value="calm and overwhelming charisma">차분하지만 압도적인 카리스마</option><option value="mysterious neutral expression">신비롭고 무표정한 얼굴</option></select></div>
+<div class="field"><label for="background">배경</label><select id="background"><option value="dark shattered dimension">어둡게 붕괴하는 차원</option><option value="purple lightning storm">보라색 번개 폭풍</option><option value="burning futuristic city">불타는 미래 도시</option><option value="deep space and galaxies">깊은 우주와 은하</option><option value="collapsing dimensions">무너지는 차원들</option><option value="dark demon castle">어두운 마왕성</option><option value="glowing magical circles">빛나는 마법진</option><option value="apocalyptic black void">종말의 검은 공허</option></select></div>
+<div class="field"><label for="rank">파워 등급</label><select id="rank"><option value="Final Boss">최종보스</option><option value="Awakened">각성</option><option value="Calamity Class">재앙급</option><option value="God Tier">신급</option><option value="Transcendent Being">초월자</option><option value="Absolute Ruler">절대자</option><option value="Universe-Level Threat">우주 파괴급</option></select></div>
+<div class="field"><label for="ratio">이미지 비율</label><select id="ratio"><option value="vertical 3:4 poster">세로 포스터 (3:4)</option><option value="vertical 9:16 smartphone wallpaper">스마트폰 배경화면 (9:16)</option><option value="square 1:1 composition">정사각형 (1:1)</option><option value="horizontal 16:9 poster">가로 포스터 (16:9)</option></select></div>
+<div class="field"><label for="density">이펙트 밀도</label><select id="density"><option value="maximum density, filling every corner">최대 밀도: 구석구석 가득 채움</option><option value="clean with effects around the subject">인물 주변 위주로 깔끔하게</option><option value="balanced cinematic effects">균형 잡힌 영화풍 이펙트</option><option value="dense layers of sparks and energy arcs">불꽃과 에너지 줄기를 빽빽하게</option></select></div>
+<div class="field full"><label for="title">메인 문구 (한글)</label><input id="title" value="어둠속성" maxlength="50"></div>
+<div class="field full"><label for="subtitle">추가 문구 (선택)</label><input id="subtitle" value="최종보스" maxlength="50" placeholder="예: 신의 각성, 재앙급"></div>
+<div class="field full"><label for="typography">글자 스타일</label><select id="typography"><option value="cracked obsidian 3D letters with glowing energy fissures">빛나는 에너지 균열이 있는 흑요석 3D 글자</option><option value="metallic chrome letters with neon outlines">네온 테두리의 크롬 금속 글자</option><option value="rough stone letters with magical runes">마법 룬 문자가 새겨진 거친 돌 글자</option><option value="molten lava letters with burning edges">가장자리가 타오르는 용암 글자</option><option value="minimal clean bold Korean typography">깔끔하고 굵은 한글 글자</option><option value="glitching cyberpunk holographic letters">글리치 효과가 있는 사이버펑크 홀로그램 글자</option></select></div>
+<div class="field full"><label for="upload">참고 사진 업로드 (선택)</label><input id="upload" type="file" accept="image/*"><img id="preview" class="preview" alt="업로드한 사진 미리보기" hidden></div>
+</div>
+<p class="hint">사진은 이 페이지 안에서 미리보기만 합니다. 프롬프트를 복사한 뒤 이미지 생성 AI에 사진을 직접 첨부하세요.</p>
+</section>
+<section class="panel">
+<h2>✨ 2. 생성된 영어 프롬프트</h2>
+<textarea id="output" spellcheck="false" aria-label="생성된 영어 프롬프트"></textarea>
+<div class="btns"><button id="generate">프롬프트 생성</button><button id="copy">📋 프롬프트 복사</button><button id="reset" class="secondary">초기화</button></div>
+<div id="status" class="status" role="status">옵션을 바꾸면 프롬프트가 자동 갱신됩니다. 버튼이 반응하지 않으면 파일을 Chrome에서 직접 열어 주세요.</div>
+<p class="hint">팁: 인물 사진을 참고 이미지로 함께 넣고, 생성된 프롬프트를 사용하면 더 비슷한 분위기를 만들 수 있어요. 이미지 AI마다 한글 글자 표현은 다를 수 있습니다.</p>
+</section>
+</div>
+<div class="footer">각성 포스터 메이커 · 개인용 프롬프트 도구 · 외부 서버로 사진을 전송하지 않습니다.</div>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+function makePrompt(){
+ const element=$('element').value, color=$('color').value, eyes=$('eyes').value, aura=$('aura').value;
+ const intensity=$('intensity').value, expression=$('expression').value, background=$('background').value;
+ const rank=$('rank').value, ratio=$('ratio').value, density=$('density').value;
+ const title=$('title').value.trim() || '어둠속성', subtitle=$('subtitle').value.trim(), typography=$('typography').value;
+ return `Create an extremely powerful supernatural awakening poster using the uploaded photo as the main reference. Preserve the person's recognizable facial features, hairstyle, and identity.\n\nCUSTOM DESIGN:\n- Element / power: ${element}\n- Main color: ${color}\n- Eye effect: ${eyes}\n- Aura style: ${aura}\n- Effect intensity: ${intensity}\n- Effect density: ${density}\n- Facial expression: ${expression}\n- Background: ${background}\n- Power rank: ${rank}\n- Main Korean title: "${title}"\n- Additional Korean subtitle: ${subtitle ? `"${subtitle}"` : 'none'}\n- Typography: ${typography}\n- Composition: ${ratio}\n\nVISUAL DIRECTION:\nSurround the subject with ${element} in ${color}. Add ${intensity}, branching energy arcs, magical particles, explosive shockwaves, glowing cracks, and swirling energy distortions. Make the eyes display ${eyes}. Wrap the silhouette in ${aura}. Use ${background} as the backdrop. The overall power fantasy should feel like a ${rank} awakening. The effects should be ${density}, while keeping the face recognizable and clearly visible.\n\nAt the bottom, render the exact Korean title "${title}" in enormous 3D typography using ${typography}. ${subtitle ? `Add the exact Korean subtitle "${subtitle}" as a separate line.` : 'Do not add any extra text.'} Keep the text legible and correctly spelled. Use dramatic cinematic lighting, deep shadows, sharp facial details, rich textures, and an epic supernatural gaming-poster aesthetic. Final image format: ${ratio}.`;
+}
+function generate(){ $('output').value=makePrompt(); $('status').textContent='프롬프트를 만들었어요! 필요하면 옵션을 바꾸고 다시 생성하세요.'; }
+$('generate').addEventListener('click',generate);
+$('copy').addEventListener('click',async()=>{if(!$('output').value.trim())generate();try{await navigator.clipboard.writeText($('output').value);$('status').textContent='복사 완료! 이미지 생성 AI에 붙여넣으세요.';}catch(e){$('output').focus();$('output').select();try{document.execCommand('copy');$('status').textContent='복사를 시도했어요. 안 되면 선택된 글자를 직접 복사하세요.';}catch(_){$('status').textContent='텍스트를 선택했어요. 길게 눌러 복사하세요.';}}});
+$('reset').addEventListener('click',()=>{ $('element').selectedIndex=0;$('color').selectedIndex=0;$('eyes').selectedIndex=0;$('aura').selectedIndex=0;$('intensity').selectedIndex=0;$('expression').selectedIndex=0;$('background').selectedIndex=0;$('rank').selectedIndex=0;$('ratio').selectedIndex=0;$('density').selectedIndex=0;$('title').value='어둠속성';$('subtitle').value='최종보스';$('typography').selectedIndex=0;$('upload').value='';$('preview').hidden=true;$('preview').removeAttribute('src');generate();$('status').textContent='기본 설정으로 초기화했어요.';});
+$('upload').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{$('preview').src=reader.result;$('preview').hidden=false;};reader.readAsDataURL(file);});
+document.querySelectorAll('select,input').forEach(el=>el.addEventListener('change',()=>{generate();}));
+$('title').addEventListener('input',generate);$('subtitle').addEventListener('input',generate);
+generate();
+</script>
+</body>
+</html>
